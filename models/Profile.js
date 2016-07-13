@@ -10,10 +10,8 @@ var Profile = new keystone.List('Profile');
 Profile.add({
 	name: { type: Types.Name, required: true, index: true },
 	bio: { type: Types.Html, wysiwyg: true },
-	picture: { type: Types.CloudinaryImage }	
+	picture: { type: Types.CloudinaryImage },
 });
-
-
 
 
 /**
