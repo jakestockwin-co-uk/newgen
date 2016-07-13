@@ -1,0 +1,29 @@
+extends ../layouts/default
+
+mixin profile(profile)
+		p!= profile.name.first + ' ' + profile.name.last
+		if profile.picture.exists
+			img(src=post._.picture.fit(160, 160)).img.pull-right
+		p!= profile.bio
+
+block intro
+	.container
+		h1= data.category ? data.category.name : 'About'
+
+block content
+	.container
+		.row
+			.col-sm-12
+				p
+					| Buy Electricity Online is the market leading Business Utility Broker in the UK. Specialising in the 
+					| Commercial Electricity and Gas markets we search for the best deal but charge you absolutely nothing. 
+					| We work for you, not the suppliers. We take your utility business to several providers and use our 
+					| buying expertise to make sure you get the best possible price. Buy Electricity Online are paid by 
+					| the Supplier, so we do not charge a fee for our services.
+		.row
+			.col-sm-12
+				.profiles
+					h1 Our Partners
+					each profile in data.profiles
+						.col-sm-6
+							+profile(profile)

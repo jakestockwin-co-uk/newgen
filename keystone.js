@@ -39,6 +39,7 @@ keystone.set('routes', require('./routes'));
 keystone.set('nav', {
 	posts: ['posts', 'post-categories'],
 	users: 'users',
+	profiles: 'profiles',
 });
 
 keystone.start();
