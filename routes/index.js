@@ -19,4 +19,5 @@ exports = module.exports = function (app) {
 	app.get('/blog/post/:post', routes.views.post);
 	app.get('/about', routes.views.about);
 	app.get('/electricityandgas', routes.views.electricityAndGas);
+	app.get('/smartmetering', routes.views.smartMetering);
 };
