@@ -1,6 +1,7 @@
 extends ../layouts/default
 
 block content
+	.hometop
 	.container
 		h1 Newgen
 		p 
@@ -10,3 +11,19 @@ block content
 		p All of our customers have a dedicated account manager.
 		p This manager will be available to help with all aspects of energy advice.
 		p We keep our customers on merit, they are not bound by any written agreement.
+	script(type='text/javascript').
+		var images=['/images/bg1.JPG','/images/bg2.JPG','/images/bg3.JPG', '/images/bg4.JPG'];
+		var nextimage=0;
+		doSlideshow();
+	
+		function doSlideshow(){
+			if(nextimage>=images.length){nextimage=0;}
+			$('.hometop')
+			.fadeOut(500, function() {
+				$('.hometop')
+				.css('background-image', 'url("' + images[nextimage++] + '")')
+				.fadeIn(500, function () {
+					setTimeout(doSlideshow, 5000);
+				});
+			});
+		}
