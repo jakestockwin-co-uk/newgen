@@ -20,6 +20,7 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'User',
+	'model prefix': 'newgen',
 
 });
 
