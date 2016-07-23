@@ -1,12 +1,21 @@
+$opacity: 0.75;
+$aboutCol: rgba(81,239,201, $opacity);
+$servicesCol: rgba(255,164,86, $opacity);
+$blogCol: rgba(145,217,252, $opacity);
+$partnersCol: rgba(250,85,50, $opacity);
+$contactCol: rgba(20,255,171, $opacity);
+
+
 .hometop {
   min-height: 100vh;
   width: 100%;
   background: url('/images/bg1.JPG');
   background-size: cover;
-  position: absolute;
+  position: fixed;
   z-index: -1;
   top: 0;
 }
+
 
 #footer {
 	margin-top: 30px;
@@ -15,8 +24,48 @@
 	color: #777777;
 }
 
-.gallery-image img{
+.gallery-image img {
     display: block;
     max-width: 100%;
     height: auto;
+}
+
+
+.section {
+  padding: 15px;
+}
+
+#about {
+  margin-top: 51px;
+  background-color: $aboutCol;
+}
+
+#services {
+  background-color: $servicesCol;
+}
+
+#blog {
+  background-color: $blogCol
+}
+
+#partners {
+  background-color: $partnersCol;
+}
+
+
+#contact {
+  background-color: $contactCol
+}
+
+
+.section {
+  min-height: 500px;
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+h1 {
+  margin-top: 10px;
 }
