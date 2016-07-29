@@ -8,7 +8,7 @@
     "keystone": "^0.3.16",
     "node-sass": "^3.3.2",
     "node-sass-middleware": "^0.9.7",
-    "react": "^15.2.1",
+    "react": "^15.3.0",
     "underscore": "^1.8.3"
   },
   "engines": {
