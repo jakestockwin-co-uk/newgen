@@ -21,7 +21,7 @@
   },
   "main": "keystone.js",
   "devDependencies": {
-    "eslint": "^3.2.1",
+    "eslint": "^3.2.2",
     "eslint-config-keystone": "^2.4.0",
     "eslint-plugin-react": "^6.0.0"
   }
