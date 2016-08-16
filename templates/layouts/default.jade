@@ -37,7 +37,7 @@ html
 		block head
 
 	//- HTML BODY
-	body
+	body#page-top(data-spy="scroll", data-target=".navbar-fixed-top")
 
 		//- HEADER
 		#header: .container
@@ -99,7 +99,7 @@ html
 		//- them specifically here, instead of bootstrap-3.3.5.min.js
 		script(src='/js/bootstrap/bootstrap-3.3.5.min.js')
 		script(src='/js/jquery.easing.min.js')
-		script(src='js/scrolling-nav.js')
+		script(src='/js/scrolling-nav.js')
 
 		//- The KeystoneJS Content Editor provides support for ks-editable data attributes,
 		//- which generate links to edit content for users who can access Keystone

@@ -17,20 +17,3 @@ $(function() {
 		event.preventDefault();
 	});
 });
-
-function onScroll(event){
-	console.log("script fired");
-	var scrollPos = $(document).scrollTop();
-	$('.navbar-nav a').each(function () {
-		console.log($(this));
-		var currLink = $(this);
-		var refElement = $(currLink.attr("href"));
-		if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
-			$('.navbar-nav ul li a').removeClass("active");
-			currLink.addClass("active");
-		}
-		else{
-			currLink.removeClass("active");
-		}
-	});
-}
