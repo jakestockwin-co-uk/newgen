@@ -1,0 +1,26 @@
+language: node_js
+
+node_js:
+- '6'
+
+script:
+- npm run lint
+
+before_deploy:
+- wget https://raw.githubusercontent.com/jakestockwin-co-uk/deployment/master/travis-deploy.sh
+  && chmod +x travis-deploy.sh && ls -l
+
+deploy:
+  provider: script
+  script: travis-deploy.sh
+  skip_cleanup: true
+  on:
+    branch: master
+
+cache:
+  directories:
+  - node_modules
+
+notifications:
+  slack:
+    secure: VyjVI+edz3y7Jap2GWnOvGTK/+qMeXn2tE7oxBFRsLkY/6cgEb5qRjJr6pCbbBljK5fMn5vDqgWPLAkvrssHk1mJZBTqaSMVU9cxpBNwga1s4eLjKMLnfBOtJSWAHvF/NxYAuS2+j3Aap1YyXLX5kknqVttnFPKmDrp1EGw2VJQkeeIrEfcG4WK6//D4TsvJE8aENrv3xKHKMCQi8ESreoYEfS47Sczpe/2g6Pu47gwCMChpQ03mw8RzY97Zk6wqKMWvyfDgB4bgIJ5uo/EY9ODIiNKTkoMSsg1n9ic+7VM+RuOkux0JjClnREbVpsyArezrTyluWcutksxSczke1Secz4vPRj83XQ2EOfwJJi8cIgFqRcnz7Pjic3Y2+zK1IdLZSd7Qq0sSgkLCVjjT7SIYBwBz0briqwqEetkadgXcuvT6ALn/MQayGFyw8pqaoMm38FQMYRGuXyGeeHb5NjK5ycNNsqmXB19GN+f/jogqi51PmLNTnpCsJ91+LEbXxPosqS/+xCSDg8IinzA1braNuYXZIrWZ4lVI8co4X2O9rssWUkihIJJyQZ6GW+Oa3E8Km1l7Db+1A0OBoQBefCSm19S42PUmkbOywfupsGSGp2qZtRo+fIV7RVjk4YIkGf9KF0/9LbB4cJVpGr2g8P+EVt3f2UJKrFSTsCdmQ+8=
