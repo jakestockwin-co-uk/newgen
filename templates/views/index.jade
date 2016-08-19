@@ -1,7 +1,13 @@
 extends ../layouts/default
 
+
 block content
 	.container
+		
+		#home.section
+			#content
+				include ../partials/home
+			#background
 		
 		#about.section
 			include ../partials/about
@@ -17,3 +23,5 @@ block content
 			
 		#contact.section.contact-section
 			include ../partials/contact
+				
+	script(src='/js/background.js')

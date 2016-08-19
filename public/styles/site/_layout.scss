@@ -25,8 +25,37 @@ $contactCol: rgba(51,102,0, $opacity);
   padding-top: 60px;
 }
 
+#home {  
+  
+  position: relative;
+  padding: 0px;
+  margin-top: 91px;
+  
+  #logo-container {
+	max-width: 500px;
+	display: block;
+	margin: 0 auto;
+  }
+  
+  #content {
+	position: absolute;
+	z-index: 2;
+	width: 100%;
+  }
+  
+  #background {
+	z-index: -1;
+	top: 0;
+	height: 100%;
+	position: absolute;
+	width: 100%;
+	background: url('/images/bg1.JPG');
+	background-size: cover;
+  };
+  
+}
+
 #about {
-  margin-top: 51px;
   background-color: $aboutCol;
 }
 
