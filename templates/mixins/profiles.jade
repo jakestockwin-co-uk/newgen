@@ -1,9 +1,8 @@
 mixin showProfile(profile)
-	.row
-		.col-md-6
-			h4 #{profile.name.full}
-			if profile.picture.exists
-				img(src=profile._.picture.fit(160, 160)).img.pull-left
-			p!= profile.bio
-			
+	.col-md-6
+		h4 #{profile.name.full}
+		if profile.picture.exists
+			img(src=profile._.picture.fit(160, 160)).img.pull-left
+		p!= profile.bio
 		
+	
