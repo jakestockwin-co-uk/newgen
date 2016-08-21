@@ -68,7 +68,11 @@ $contactCol: rgba(51,102,0, $opacity);
 }
 
 #blog {
-  background-color: $blogCol
+  background-color: $blogCol;
+  
+  a {
+	color: #333333
+  }
 }
 
 #partners {
