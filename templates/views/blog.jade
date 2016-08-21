@@ -17,7 +17,7 @@ mixin post(post)
 			if post.author
 				| by #{post.author.name.full}
 		if post.image.exists
-			img(src=post._.image.fit(160,160)).img.pull-right
+			img(src=post._.image.fit(160,160, {secure: true})).img.pull-right
 		p!= post.content.brief
 		if post.content.extended
 			p.read-more: a(href='/blog/post/' + post.slug) Read more...
