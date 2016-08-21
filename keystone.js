@@ -33,6 +33,10 @@ keystone.set('locals', {
 	editable: keystone.content.editable,
 });
 
+if (keystone.get('env') === 'production') {
+	keystone.set('session store', 'connect-mongo');
+}
+
 keystone.set('routes', require('./routes'));
 
 
