@@ -57,7 +57,16 @@ html
 					.collapse.navbar-collapse
 						ul.nav.navbar-nav.navbar-left
 							each link in navLinks
-								li: a.page-scroll(href=link.href)= link.label
+								if section==='home'
+									// Basic # link, makes page scroll.
+									li: a.page-scroll(href=link.href)= link.label
+								else
+									// Add a / to the link so it navigates back to homepage
+									if section==='blog' && link.label==='Blog'
+										// Unless they're on a blog post, in which they should be taken to the full blog page
+										li: a.page-scroll(href='/blog')= link.label
+									else
+										li: a.page-scroll(href='/' + link.href)= link.label
 						ul.nav.navbar-nav.navbar-right
 							if user
 								if user.canAccessKeystone
