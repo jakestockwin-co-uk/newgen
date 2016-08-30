@@ -38,9 +38,12 @@ $contactCol: rgba(51,102,0, $opacity);
   padding: 0px;
   
   #logo-container {
-	max-width: 500px;
+	max-width: 300px;
 	display: block;
-	margin: 0 auto;
+	margin: auto;
+	img {
+	  margin-top: 30%;
+	}
   }
   
   #content {
