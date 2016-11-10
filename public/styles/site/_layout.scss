@@ -33,7 +33,7 @@ $contactCol: rgba(51,102,0, $opacity);
 }
 
 #home {  
-  
+  min-height: 500px;
   position: relative;
   padding: 0px;
   
@@ -64,35 +64,6 @@ $contactCol: rgba(51,102,0, $opacity);
   
 }
 
-#about {
-  background-color: $aboutCol;
-}
-
-#services {
-  background-color: $servicesCol;
-}
-
-#blog {
-  background-color: $blogCol;
-  
-  a {
-	color: #333333
-  }
-}
-
-#partners {
-  background-color: $partnersCol;
-}
-
-
-#contact {
-  background-color: $contactCol
-}
-
-
-.section {
-  min-height: 500px;
-}
 
 .navbar {
   margin-bottom: 0px;

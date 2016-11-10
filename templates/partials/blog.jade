@@ -1,6 +1,6 @@
 include ../mixins/homepage-post
 	
-h1 Blog
+h1 The Energy Reporter
 .row
 	.col-xs-12
 		.content-box
@@ -8,15 +8,13 @@ h1 Blog
 				if posts.results.length
 					if posts.totalPages > 1
 						h4 Showing 
-							strong #{posts.first}
-							|  to 
-							strong #{posts.last}
+							strong 2
 							|  of 
-							strong #{posts.total}
-							|  posts.
+							strong   #{posts.total} 
+							|  posts. 
 							if posts.total > 2
 								a(href='/blog')
-									|  Click here to all blog posts
+									| Click here to see all posts
 					else
 						h4 Showing #{utils.plural(posts.results.length, '* post')}.
 					.blog
@@ -24,6 +22,6 @@ h1 Blog
 							+post(post)
 					if posts.total > 2
 						a(href='/blog')
-							h3 See all blog posts
+							h3 See all posts
 				else
 					h3 There are no posts yet.

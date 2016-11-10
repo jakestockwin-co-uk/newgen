@@ -2,8 +2,8 @@ extends ../layouts/default
 include ../mixins/blog-post
 
 block intro
-	.container
-		h1= data.category ? data.category.name : 'Blog'
+	.container(style='margin-top: 100px')
+		h1= data.category ? data.category.name : 'The Energy Reporter Blog'
 
 block content
 	.container: .row

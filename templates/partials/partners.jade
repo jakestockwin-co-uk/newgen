@@ -1,9 +1,0 @@
-include ../mixins/profiles
-
-h1 Our Partners
-.row
-	.col-xs-12
-		.content-box
-			if locals.profiles.length
-				each profile in locals.profiles
-					+showProfile(profile)
