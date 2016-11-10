@@ -5,6 +5,10 @@ $blogCol: rgba(0,102,204, $opacity);
 $partnersCol: rgba(250,40,20, $opacity);
 $contactCol: rgba(51,102,0, $opacity);
 
+body {
+  color: #777777;
+}
+
 .container-first {
   margin-top: 91px;
 }
