@@ -19,7 +19,24 @@ a {
 }
 
 #tagline {
-  color: $dark;
+  color: $logo-green;
+  display: inline-block;
+  margin: auto;
+  padding: 5px;
+}
+
+#tagline-shadow {
+  background-color: rgba(#FFFFFF, 0.75);
+  border-radius: 5px;
+  margin: auto;
+  text-align: center;
+  display: inline-block;
+  border-color: $logo-green;
+  border-style: solid;
+}
+
+#tagline-container {
+  text-align: center;
 }
 
 .container-first {
