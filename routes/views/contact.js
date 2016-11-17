@@ -28,8 +28,6 @@ exports = module.exports = function (req, res) {
 			}
 		});
 
-		// Should never reach here.
-		next();
 
 	});
 
