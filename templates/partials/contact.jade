@@ -2,4 +2,31 @@ h1 Contact Us
 .row
 	.col-xs-12
 		.content-box
-			p Coming Soon.
+			if enquirySubmitted
+				.alert-success.alert
+					p Your message has been sent. Thank you for getting in touch, we'll get back to you as soon as possible.
+			form(method='post' action='#contact').form-horizontal
+				input(type='hidden', name='action', value='contact')
+				.form-group(class=validationErrors.name ? 'has-error' : null)
+					label.col-sm-2.text-left.control-label Name
+					.col-sm-10
+						input(type='text' name='name.full' value=formData['name.full'] required placeholder="John Doe").form-control
+				.form-group(class=validationErrors.companyName ? 'has-error' : null)
+					label.col-sm-2.text-left.control-label Company Name
+					.col-sm-10
+						input(type='text' name='companyName' value=formData['companyName'] required placeholder="Company Name").form-control
+				.form-group(class=validationErrors.email ? 'has-error' : null)
+					label.col-sm-2.control-label Email
+					.col-sm-10
+						input(type='email' name='email' value=formData.email required placeholder="name@domain.com").form-control
+				.form-group
+					label.col-sm-2.control-label Phone
+					.col-sm-10
+						input(type='text' name='phone' value=formData.phone placeholder='(optional)').form-control
+				.form-group(class=validationErrors.message ? 'has-error' : null)
+					label.col-sm-2.control-label Message
+					.col-sm-10
+						textarea(name='message' placeholder='Leave us a message...' rows=4 required).form-control= formData.message
+				.form-group
+					.col-sm-10.col-sm-offset-2
+						button(type='submit').btn.btn-primary Submit
