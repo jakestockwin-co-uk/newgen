@@ -1,16 +1,25 @@
+@import 'variables';
+
 $opacity: 0.85;
-$aboutCol: rgba(51,102,0, $opacity);
-$servicesCol: rgba(204,102,0, $opacity);
-$blogCol: rgba(0,102,204, $opacity);
-$partnersCol: rgba(250,40,20, $opacity);
-$contactCol: rgba(51,102,0, $opacity);
 
 body {
-  color: #777777;
+  color: $dark;
+}
+
+h1 {
+  color: $logo-green;
+}
+
+h2, h3, h4 {
+  color: $logo-orange;
+}
+
+a {
+  color: $primary;
 }
 
 #tagline {
-  color: #000000;
+  color: $dark;
 }
 
 .container-first {
