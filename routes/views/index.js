@@ -35,10 +35,13 @@ exports = module.exports = function (req, res) {
 
 	locals.formData = req.body || {};
 	locals.validationErrors = {};
-	locals.enquirySubmitted = false;
+	locals.enquirySubmitted = req.query.success || false;
+	locals.error = false;
+	locals.success = req.query.success;
 
 	view.on('post', { action: 'contact' }, function (next) {
-
+		// We will only hit this if things have gone wrong!
+		locals.error = true;
 		var application = new Enquiry.model();
 		var updater = application.getUpdateHandler(req);
 
@@ -46,9 +49,12 @@ exports = module.exports = function (req, res) {
 			flashErrors: true,
 		}, function (err) {
 			if (err) {
+				// This should always happen, as it failed for contact.js
 				locals.validationErrors = err.errors;
 			} else {
-				locals.enquirySubmitted = true;
+				// This should never happen, but if it does then everything is fine.
+				locals.errors = false;
+				locals.success = true;
 			}
 			next();
 		});

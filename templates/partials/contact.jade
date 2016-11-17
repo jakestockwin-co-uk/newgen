@@ -1,11 +1,19 @@
+include ../mixins/flash-messages
+
 h1 Contact Us
 .row
 	.col-xs-12
 		.content-box
-			if enquirySubmitted
-				.alert-success.alert
-					p Your message has been sent. Thank you for getting in touch, we'll get back to you as soon as possible.
-			form(method='post' action='#contact').form-horizontal
+				if error
+					//- Flash messages allow you to display once-off status messages to users, e.g. form
+					//- validation errors, success messages, etc.
+					+flash-messages(messages)
+				else
+					if success
+						.alert-success.alert
+							p Your message has been sent. Thank you for getting in touch, we'll get back to you as soon as possible.
+
+		form(method='post' action='/contact').form-horizontal
 				input(type='hidden', name='action', value='contact')
 				.form-group(class=validationErrors.name ? 'has-error' : null)
 					label.col-sm-2.text-left.control-label Name
@@ -19,7 +27,7 @@ h1 Contact Us
 					label.col-sm-2.control-label Email
 					.col-sm-10
 						input(type='email' name='email' value=formData.email required placeholder="name@domain.com").form-control
-				.form-group
+				.form-group(class=validationErrors.phone ? 'has-error' : null)
 					label.col-sm-2.control-label Phone
 					.col-sm-10
 						input(type='text' name='phone' value=formData.phone placeholder='(optional)').form-control
