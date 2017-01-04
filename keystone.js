@@ -22,6 +22,8 @@ keystone.init({
 	'user model': 'User',
 	'model prefix': 'newgen',
 
+	'mongo options': { server: { keepAlive: 1 } },
+
 });
 
 keystone.import('models');
